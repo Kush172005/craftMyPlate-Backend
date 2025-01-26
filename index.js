@@ -1,8 +1,10 @@
 const express = require("express");
 const cors = require("cors");
+require("dotenv").config();
 
 const app = express();
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
+const BASE_URL = process.env.HOSTED_URL;
 
 app.use(cors());
 
@@ -11,37 +13,37 @@ const initialMenuItems = [
         id: 1,
         name: "Gourmet Burger",
         price: 150,
-        image: "http://localhost:5000/images/burger.jpg",
+        image: `${BASE_URL}/images/burger.jpg`,
     },
     {
         id: 2,
         name: "Margherita Pizza",
         price: 560,
-        image: "http://localhost:5000/images/pizza.jpg",
+        image: `${BASE_URL}/images/pizza.jpg`,
     },
     {
         id: 3,
         name: "Caesar Salad",
         price: 180,
-        image: "http://localhost:5000/images/salad.jpg",
+        image: `${BASE_URL}/images/salad.jpg`,
     },
     {
         id: 4,
         name: "Truffle Fries",
         price: 140,
-        image: "http://localhost:5000/images/fries.jpg",
+        image: `${BASE_URL}/images/fries.jpg`,
     },
     {
         id: 5,
         name: "Iced Latte",
         price: 220,
-        image: "http://localhost:5000/images/coffee.jpg",
+        image: `${BASE_URL}/images/coffee.jpg`,
     },
     {
         id: 6,
         name: "Macroni Pasta",
         price: 310,
-        image: "http://localhost:5000/images/pasta.jpg",
+        image: `${BASE_URL}/images/pasta.jpg`,
     },
 ];
 
