@@ -8,6 +8,8 @@ const BASE_URL = process.env.HOSTED_URL;
 
 app.use(cors());
 
+const path = require("path");
+
 const initialMenuItems = [
     {
         id: 1,
@@ -47,7 +49,7 @@ const initialMenuItems = [
     },
 ];
 
-app.use("/images", express.static("assets/images"));
+app.use("/images", express.static(path.join(__dirname, "assets/images")));
 
 app.get("/api/menu", (req, res) => {
     res.json(initialMenuItems);
